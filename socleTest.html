@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouvrir une fenêtre centrée</title>
+    <style>
+        .simulateFakeButton {
+            cursor: pointer;
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            top: 42vh;
+            left: 39vw;
+            height: 21vh;
+            width: 30vw;
+        }
+        .simulateFakeButton:hover {
+            background-color: rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;box-sizing: content-box;">
+    <img src="./rct-socle-sfr.alc-crm.com_SFR_BT_FRONT_front (1).png" style="width:100vw;height:110vh" alt="">
+    <button onclick="openCenteredWindow()" class="simulateFakeButton"></button>
+
+    <script>
+        function openCenteredWindow() {
+            const width = 800;  // Largeur de la nouvelle fenêtre
+            const height = window.screen.height; // Hauteur de la nouvelle fenêtre
+
+            // Calcul de la position
+            const left = (window.screen.width / 2) - (width / 2);
+            const top = (window.screen.height / 2) - (height / 2);
+
+            // Ouverture de la fenêtre avec les dimensions et la position calculées
+            window.open('./index.html', 'csv_importer', `width=${width},height=${height},top=${top},left=${left}`);
+        }
+    </script>
+</body>
+</html>
